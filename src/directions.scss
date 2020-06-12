@@ -1,0 +1,152 @@
+@import 'bourbon';
+@import '~breakpoint-sass/stylesheets/breakpoint.scss';
+
+#root {
+  background-color: #f7f8f8;
+
+  #container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 48px 16px;
+    width: 100%;
+
+    @include breakpoint(768px) {
+      max-width: 750px;
+      padding: 48px 16px;
+    }
+
+    @include breakpoint(992px) {
+      max-width: 970px;
+      padding: 48px;
+    }
+
+    @include breakpoint(1240px) {
+      max-width: 1170px;
+    }
+
+    #contains-contents {
+      #title, #subtitle {
+        color: #758592;
+        font-family: 'pages-suedtirol-next', sans-serif;
+        text-align: center;
+      }
+
+      #title {
+        font-size: 34px;
+
+        @include breakpoint(768px) {
+          font-size: 48px;
+        }
+      }
+
+      #subtitle {
+        font-size: 24px;
+      }
+    }
+
+    #wrapper {
+      padding: 0;
+
+      #contains-image {
+        margin: 48px 0;
+        padding: 0;
+        position: relative;
+
+        #image {
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          bottom: 8px;
+          left: 8px;
+          position: absolute;
+          right: 8px;
+          top: 8px;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          padding-bottom: percentage(9/16);
+        }
+      }
+
+      #contains-items {
+        padding: 0;
+
+        #items {
+          .item {
+            display: flex;
+            width: 100%;
+
+            .contains-bullet {
+              background-position: center center;
+              background-repeat: no-repeat;
+              background-size: contain;
+              height: 50px;
+              width: 50px;
+
+              svg {
+                height: 26px;
+                padding: 13px;
+                width: 26px;
+              }
+            }
+
+            .contains-content {
+              color: #758592;
+              flex: 1;
+              font-family: 'pages-kievit', sans-serif;
+              font-size: 17px;
+              padding: 0 0 0 16px;
+              line-height: 25px;
+              font-weight: 400;
+
+              b, strong {
+                font-weight: 700;
+              }
+
+              a {
+                color: #758592;
+                font-weight: 700;
+                text-decoration: none;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+
+                &:before {
+                  content: '> ';
+                }
+              }
+
+              h2 {
+                color: #758592;
+                font-family: 'pages-suedtirol-next', sans-serif;
+                font-size: 34px;
+                font-weight: 400;
+                line-height: 1.1;
+                margin: 0;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+
+      @include breakpoint(992px) {
+        display: flex;
+        margin: 0 -8px;
+        padding: 48px 0 0 0;
+
+        #contains-image {
+          padding: 0;
+        }
+
+        #contains-image, #contains-items {
+          flex: 1;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}
