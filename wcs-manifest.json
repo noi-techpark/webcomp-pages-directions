@@ -17,7 +17,7 @@
     }
   ],
   "image": null,
-  "searchTags": ["pages", "directions", "location"],
+  "searchTags": [],
   "dist": {
     "basePath": "dist",
     "files": [
